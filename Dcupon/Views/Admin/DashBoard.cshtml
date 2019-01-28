@@ -1,0 +1,216 @@
+﻿@model Dcupon.Models.CatergoryModel
+
+@{
+    ViewBag.Title = "LogIn";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="~/Scripts/ontodeal.min.js"></script>
+<div class="mainnav">
+
+    <div class="container">
+
+        <a class="mainnav-toggle" data-toggle="collapse" data-target=".mainnav-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <nav class="collapse mainnav-collapse" role="navigation">
+
+
+
+            <ul class="mainnav-menu">
+
+                <li class="dropdown active">
+                    <a href="@Url.Action("DashBoard", "Admin")">Dashboard</a>
+
+                </li>
+
+
+                <li class="dropdown ">
+
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+                        Add
+                        <i class="mainnav-caret"></i>
+                    </a>
+
+                    <ul class="dropdown-menu" role="menu">
+
+
+
+                        <li>
+                            <a href="@Url.Action("CreateCategory", "Admin")">
+                                <i class="fa fa-bars"></i> Add Categories
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="@Url.Action("SubCategory", "Admin")">
+                                <i class="fa fa-bars"></i> Add SubCategories
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="@Url.Action("CreateWebsites", "Admin")">
+                                <i class="fa fa-bars"></i> Add Websites Categories
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="@Url.Action("CreateCupons", "Admin")">
+                                <i class="fa fa-ticket"></i> Add Coupons
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("ImageUpload", "Admin")">
+                                <i class="fa fa-picture-o"></i> Upload Images
+                            </a>
+                        </li>
+
+
+
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="@Url.Action("CouponsList", "Admin")">Coupons List</a>
+
+                </li>
+
+                <li class="dropdown">
+                    <a href="@Url.Action("MobileUsers", "Admin")">Mobile Users</a>
+
+                </li>
+
+                <li class="dropdown">
+                    <a href="@Url.Action("RegUsers", "Admin")">Registered Users</a>
+
+                </li>
+
+                <li class="dropdown">
+                    <a href="@Url.Action("slider", "Admin")">Slider</a>
+
+                </li>
+                <li class="dropdown">
+                    <a href="@Url.Action("ImportData", "Admin")">Import Data</a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div> <!-- /.container -->
+
+</div>
+
+<!-- /.mainnav -->
+
+<div class="content">
+
+    <div class="container">
+
+        <div class="portlet">
+
+            <h4 class="portlet-title">
+                <u>Coupons Stats</u>
+            </h4>
+
+            <div class="portlet-body">
+
+                <div class="row">
+                  
+
+               @for (int i = 0; i < Model.listCategory.Count(); i++)
+               {
+                    <div class="col-sm-6 col-md-3">
+                        <a href="@Url.Action("CouponsList", "Admin", new { id = Model.listCategory[i].id })" class="nav-cat-list">
+                            <div class="row-stat">
+                                <p class="row-stat-label">@Model.listCategory[i].Title</p>
+                                <h3 class="row-stat-value label-success-val">@Model.CuponCountCat(Model.listCategory[i].id)</h3>
+                                <span class="label label-success row-stat-badge">Coupons</span>
+                                <i class="fa fa-share-square-o"></i>
+                            </div> <!-- /.row-stat -->
+                        </a>
+                    </div> <!-- /.col -->
+               }
+                   
+
+
+
+                </div> <!-- /.row -->
+
+            </div> <!-- /.portlet-body -->
+
+        </div> <!-- /.portlet -->
+
+
+
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div class="portlet">
+
+                    <h4 class="portlet-title">
+                        <u>Recent Coupons</u>
+                    </h4>
+
+                    <div class="portlet-body">
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Create On</th>
+                                    <th>Modified On</th>
+                                 
+                                     
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                        @for (int i = 0; i < Model.listofcupons.Count; i++)
+                                   {
+                                <tr>
+                                    <td>@Model.listofcupons[i].Title</td>
+                                    <td>@Model.listofcupons[i].CreatedOn.ToString("dd MMM yyyy") </td>
+                                    <td>@Convert.ToDateTime(Model.listofcupons[i].ModifiedOn).ToString("dd MMM yyyy")</td>
+                                   
+                                     
+                                </tr>
+                                }
+                           
+                            </tbody>
+                        </table>
+
+                    </div> <!-- /.portlet-body -->
+
+                </div> <!-- /.portlet -->
+
+            </div> <!-- /.col -->
+
+
+
+
+        </div> <!-- /.row -->
+
+
+
+
+    </div> <!-- /.container -->
+
+</div> <!-- .content -->
+
+
+
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left">Copyright &copy; @DateTime.Now.Year ontodeals.com</p>
+    </div>
+</footer>

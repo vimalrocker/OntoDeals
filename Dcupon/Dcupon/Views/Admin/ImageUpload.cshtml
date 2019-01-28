@@ -1,0 +1,180 @@
+﻿@model Dcupon.Models.ImageModel
+
+
+
+@{
+    ViewBag.Title = "ImageUpload";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="wrapper">
+
+ 
+
+    <div class="mainnav">
+
+        <div class="container">
+
+            <a class="mainnav-toggle" data-toggle="collapse" data-target=".mainnav-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-bars"></i>
+            </a>
+
+            <nav class="collapse mainnav-collapse" role="navigation">
+
+
+
+                <ul class="mainnav-menu">
+
+                    <li class="dropdown ">
+                        <a href="@Url.Action("DashBoard", "Admin")">Dashboard</a>
+
+                    </li>
+
+
+                    <li class="dropdown active">
+
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+                            Add
+                            <i class="mainnav-caret"></i>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+
+
+
+                            <li>
+                                <a href="@Url.Action("CreateCategory", "Admin")">
+                                    <i class="fa fa-bars"></i> Add Categories
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="@Url.Action("SubCategory", "Admin")">
+                                    <i class="fa fa-bars"></i> Add SubCategories
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="@Url.Action("CreateWebsites", "Admin")">
+                                    <i class="fa fa-bars"></i> Add Websites Categories
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="@Url.Action("CreateCupons", "Admin")">
+                                    <i class="fa fa-ticket"></i> Add Coupons
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("ImageUpload", "Admin")">
+                                    <i class="fa fa-picture-o"></i> Upload Images
+                                </a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="@Url.Action("slider", "Admin")">Slider</a>
+
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="@Url.Action("CouponsList", "Admin")">Coupons List</a>
+
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="@Url.Action("MobileUsers", "Admin")">Mobile Users</a>
+
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="@Url.Action("RegUsers", "Admin")">Registered Users</a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div> <!-- /.container -->
+
+    </div>
+    
+    
+    <!-- /.mainnav -->
+
+    <div class="content">
+        <div class="container">
+            <section class="demo-section">
+
+
+
+                <ul id="myTab1" class="nav nav-tabs">
+
+                    <li class="active">
+                        <a href="" data-toggle="tab">Upload Images</a>
+                    </li>
+
+ 
+
+
+
+                </ul>
+
+                <div id="myTab1Content" class="tab-content">
+    
+
+@using (Html.BeginForm("ImageUpload", "Admin", FormMethod.Post, new { id = "CreateCategory", enctype = "multipart/form-data"}))
+                        {
+                    <div class="tab-pane" id="home">
+
+                        <div class="col-md-6">
+
+
+
+                                <div class="form-group">
+                                    <label for="name">Image Title</label>
+                                  @Html.TextBoxFor(m => m.Name, new { @class = "validate[required] form-control" })
+                                 
+                                </div> <!-- /.form-group -->
+
+
+                                <div class="form-group">
+                                 @Html.TextBoxFor(m => m.File, new { type = "file", @class = "validate[required] form-control img_upload" })
+                               
+                                </div> <!-- /.form-group -->
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-danger">Upload</button>
+                                    <a class="btn btn-danger" href="@Url.Action("ImageList", "Admin")">ViewImageList</a>
+                                </div> <!-- /.form-group -->
+ 
+
+                        </div>
+                    </div> <!-- /.tab-pane -->
+
+
+}
+
+
+                </div> <!-- /.tab-content -->
+
+            </section> <!-- /.demo-section -->
+
+        </div>
+
+
+
+    </div> <!-- .content -->
+
+</div> <!-- /#wrapper -->
+

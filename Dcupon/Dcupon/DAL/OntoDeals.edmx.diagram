@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8d64c40f22e143dba7b0d41e00898d94" Name="Diagram1" ShowGrid="false" SnapToGrid="true" ZoomLevel="98" DisplayType="false">
+        <EntityTypeShape EntityType="OntoDealsModel.Category" Width="1.5" PointX="0.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OntoDealsModel.Website" Width="1.5" PointX="2.125" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OntoDealsModel.Audit" Width="1.5" PointX="3.75" PointY="1" />
+        <EntityTypeShape EntityType="OntoDealsModel.AdminProfile" Width="1.5" PointX="5.375" PointY="1" />
+        <EntityTypeShape EntityType="OntoDealsModel.ImageDetail" Width="1.5" PointX="7" PointY="1" />
+        <EntityTypeShape EntityType="OntoDealsModel.CuponDetail" Width="1.5" PointX="8.625" PointY="1" />
+        <EntityTypeShape EntityType="OntoDealsModel.SubCategory" Width="1.5" PointX="0.5" PointY="3" />
+        <EntityTypeShape EntityType="OntoDealsModel.CustomerMobile" Width="1.5" PointX="3.75" PointY="3.25" />
+        <EntityTypeShape EntityType="OntoDealsModel.Customer" Width="1.5" PointX="2.25" PointY="3.25" />
+        <EntityTypeShape EntityType="OntoDealsModel.Slider" Width="1.5" PointX="10.5" PointY="1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

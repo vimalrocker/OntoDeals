@@ -1,0 +1,50 @@
+﻿@model Dcupon.Models.DataModel
+
+
+
+ 
+<aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9">
+    <div class="side-nav-categories">
+        <div class="block-title"> Goto </div>
+        <div class="box-content box-category">
+            <ul id="magicat">
+                @for (int i = 0; i < Model.listofwebsite.Count(); i++)
+                {
+                    <li class="level0- level0"> <span class="magicat-cat"><a href="@Url.Action("Coupons", "Home", new { src = Model.listofwebsite[i].Title })"><span>@Model.listofwebsite[i].Title</span></a></span> </li>
+                }
+
+
+            </ul>
+        </div>
+        <div class="box-content">
+            <p class="clearfix"></p>
+            <br/>
+            <a href="@Url.Action("rechargeoffers", "home")" class="recharge-offers">
+
+                Recharge Offers
+            </a>
+
+        </div>
+    </div>
+
+    @*<div class="side-nav-categories disclaimer">
+        <div class="block-title"> Disclaimer </div>
+        <div class="box-content box-category">
+            <p>1. Amazon is not offering any Recharge, for any queries or issues related to the Recharge or Gift  Vouchers being offered by Ontodeals,Any Recharge related queries or issues, kindly contact Ontodeals Customer Support team (support@ontodeals.com)
+
+Amazon does not accept any Missing Recharge related Claims. Hence, we do not get paid for any missing transactions and are unable to process Missing Transaction claims.Missing Recharge Claims to  Amazon will be marked as Declined as we are not allowed to forward them to Amazon.
+
+Kindly Note: Add products in your Amazon cart only after you click via Ontodeals.com, Else you will not get Recharge.</p>
+<p>2. Recharge will not be Done if you return or exchange, all or any part of your order. In all these cases Recharge Offer for the order will be Cancelled.</p>
+<p>3. Complete your purchase in the same session after clicking trough Ontodeals.com.</p>
+<p>4. Do not visit any other coupon,deal or price comparison, site in between clicking-out from Ontodeals.com & Complete the Order on retailer's site in same period.</p>
+<p>5.Only use Coupons available on Ontodeals.com  to get Recharge Amount.</p>
+<p>6. Recharge Offer is NOT guaranteed using a Coupon(from other Website),Gift Card, Gift Voucher,Gift Certificate or Store Credit.<br/>
+*Recharge rates are subject to change at any time without prior notification</p>
+        </div>
+    </div>*@
+
+
+
+
+</aside>

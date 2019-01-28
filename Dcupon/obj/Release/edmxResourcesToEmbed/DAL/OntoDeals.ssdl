@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OntoDealsModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminProfile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PasswordVerificationToken" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="PasswordVerificationTokenExpirydate" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="Role" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Api_Import_Status">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="api_Name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="api_import_status" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="no_of_row" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Audit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleId" Type="int" Nullable="false" />
+    <Property Name="Details" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CreatedOn" Type="timestamp" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="timestamp" Precision="0" Nullable="false" />
+    <Property Name="Isactive" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CuponDetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoriesId" Type="int" Nullable="false" />
+    <Property Name="WebsitesId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="ImageurlId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="CouponType" Type="int" Nullable="false" />
+    <Property Name="RedirectType" Type="int" Nullable="false" />
+    <Property Name="RedirectUrl" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="CuponCode" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsActive" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime" Precision="0" />
+    <Property Name="SubcategoriesID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="passwordVerificationToken" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Source" Type="varchar" MaxLength="45" />
+    <Property Name="Track_Id" Type="varchar" MaxLength="45" />
+    <Property Name="Track_Expiary_Date" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="CustomerMobile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Mobile" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="MobileOperator" Type="int" Nullable="false" />
+    <Property Name="ConnectionType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImageDetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Url" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="imageid" Type="int" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="400" Nullable="false" />
+    <Property Name="redirectlink" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="IsActive" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubCategories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CreatedOn" Type="timestamp" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="timestamp" Precision="0" Nullable="false" />
+    <Property Name="Isactive" Type="smallint" Nullable="false" />
+    <Property Name="categoriesID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Websites">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="Isactive" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="OntoDealsModelStoreContainer">
+    <EntitySet Name="AdminProfile" EntityType="Self.AdminProfile" Schema="OntoDeals" store:Type="Tables" />
+    <EntitySet Name="Api_Import_Status" EntityType="Self.Api_Import_Status" Schema="OntoDeals" store:Type="Tables" />
+    <EntitySet Name="Audit" EntityType="Self.Audit" Schema="OntoDeals" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="OntoDeals" store:Type="Tables" />
+    <EntitySet Name="CuponDetails" EntityType="Self.CuponDetails" Schema="OntoDeals" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="OntoDeals" store:Type="Tables" />
+    <EntitySet Name="CustomerMobile" EntityType="Self.CustomerMobile" Schema="OntoDeals" store:Type="Tables" />
+    <EntitySet Name="ImageDetails" EntityType="Self.ImageDetails" Schema="OntoDeals" store:Type="Tables" />
+    <EntitySet Name="Slider" EntityType="Self.Slider" Schema="OntoDeals" store:Type="Tables" />
+    <EntitySet Name="SubCategories" EntityType="Self.SubCategories" Schema="OntoDeals" store:Type="Tables" />
+    <EntitySet Name="Websites" EntityType="Self.Websites" Schema="OntoDeals" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

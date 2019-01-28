@@ -1,0 +1,184 @@
+﻿@model Dcupon.Models.ApiUploadStatus
+
+@{
+    ViewBag.Title = "LogIn";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="~/Scripts/ontodeal.min.js"></script>
+<div id="wrapper">
+    <div class="mainnav">
+
+        <div class="container">
+
+            <a class="mainnav-toggle" data-toggle="collapse" data-target=".mainnav-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-bars"></i>
+            </a>
+
+            <nav class="collapse mainnav-collapse" role="navigation">
+
+
+
+                <ul class="mainnav-menu">
+
+                    <li class="dropdown ">
+                        <a href="@Url.Action("DashBoard", "Admin")">Dashboard</a>
+
+                    </li>
+
+
+                    <li class="dropdown active">
+
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+                            Add
+                            <i class="mainnav-caret"></i>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+
+
+
+                            <li>
+                                <a href="@Url.Action("CreateCategory", "Admin")">
+                                    <i class="fa fa-bars"></i> Add Categories
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="@Url.Action("SubCategory", "Admin")">
+                                    <i class="fa fa-bars"></i> Add SubCategories
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="@Url.Action("CreateWebsites", "Admin")">
+                                    <i class="fa fa-bars"></i> Add Websites Categories
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="@Url.Action("CreateCupons", "Admin")">
+                                    <i class="fa fa-ticket"></i> Add Coupons
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("ImageUpload", "Admin")">
+                                    <i class="fa fa-picture-o"></i> Upload Images
+                                </a>
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="@Url.Action("MobileUsers", "Admin")">Mobile Users</a>
+
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="@Url.Action("RegUsers", "Admin")">Registered Users</a>
+
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="@Url.Action("slider", "Admin")">Slider</a>
+
+                    </li>
+                    <li class="dropdown">
+                        <a href="@Url.Action("ImportData", "Admin")">Import Data</a>
+
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div> <!-- /.container -->
+
+    </div>
+
+    <!-- /.mainnav -->
+    <div class="content">
+
+        <div class="container">
+
+            <div class="portlet">
+
+
+
+                <div class="portlet-body">
+
+                    <div class="row">
+
+
+
+                        <div class="col-sm-6 col-md-6">
+                            <h4 class="portlet-title">
+                                <u>List of APIs</u>
+
+                            </h4>
+                            <div class="col-sm-6 col-md-6">
+                                <div id="cover">
+                                    <img class="preloader" src="~/ImageUploaded/Loading.gif" alt="load" />
+                                </div>
+                                <div id="loadApi">
+
+                                    <a href="#" class="nav-cat-list" style="text-decoration:none;">
+                                        <div class="row-stat">
+                                            <p class="row-stat-label">Groupon data load</p>
+                                        </div> <!-- /.row-stat -->
+                                    </a>
+
+                                </div>
+
+
+                            </div>
+                            
+
+
+                        </div> <!-- /.col -->
+
+
+                        <div class="col-sm-6 col-md-6" id="loadApi">
+                            <h4 class="portlet-title">
+                                <u>API</u>
+
+                            </h4>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Name</th>
+                                        <th>Status</th>
+                                        <th>No. of records inserted</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="api_statusgrid">
+                                    @Html.Partial("apistatusgrid")
+
+                                </tbody>
+                            </table>
+                        </div> <!
+
+
+
+
+                    </div> <!-- /.row -->
+
+                </div> <!-- /.portlet-body -->
+
+            </div> <!-- /.portlet -->
+            <!-- /.row -->
+
+
+
+
+        </div> <!-- /.container -->
+
+    </div><!-- .content -->
+</div>
