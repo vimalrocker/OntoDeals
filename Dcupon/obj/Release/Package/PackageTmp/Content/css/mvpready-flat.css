@@ -1,0 +1,84 @@
+
+.navbar {
+  background-image: none;
+  background-repeat: no-repeat;
+  -ms-filter: none;
+  filter: none;
+}
+.btn {
+  background-image: none;
+  background-repeat: no-repeat;
+  -ms-filter: none;
+  filter: none;
+}
+.alert {
+  background-image: none;
+  background-repeat: no-repeat;
+  -ms-filter: none;
+  filter: none;
+}
+.progress-bar {
+  background-image: none;
+  -ms-filter: none;
+  filter: none;
+}
+.table-bordered thead tr,
+.table-bordered tfoot tr {
+  background-image: none;
+  background-repeat: no-repeat;
+  -ms-filter: none;
+  filter: none;
+}
+.accordion-boxed .accordion-toggle {
+  background-image: none;
+  background-repeat: no-repeat;
+  -ms-filter: none;
+  filter: none;
+}
+.accordion-boxed .panel.is-open .accordion-toggle {
+  background-image: none;
+  background-repeat: no-repeat;
+  -ms-filter: none;
+  filter: none;
+}
+.modal-styled .modal-header {
+  background-image: none;
+  background-repeat: no-repeat;
+  -ms-filter: none;
+  filter: none;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-image: none;
+  background-repeat: no-repeat;
+  -ms-filter: none;
+  filter: none;
+}
+
+/*changes by new upgrade*/
+
+#cover {
+  position: absolute;
+  height: 80%;
+  width: 90%;
+  z-index: 1; /* make sure logout_box has a z-index of 2 */
+  background-color: #ffffff;
+  opacity:0.7;
+  display:none;
+}
+
+.covershow {
+    display:block !important;
+    opacity:.3;
+}
+
+.preloader {
+  margin-top: 25px;
+  height: 50px;
+}
+
+/*end*/

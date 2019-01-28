@@ -1,0 +1,249 @@
+﻿@model Dcupon.Models.ImageModel
+
+@{
+    ViewBag.Title = "ImageList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<div id="wrapper">
+ 
+    <div class="mainnav">
+
+        <div class="container">
+
+            <a class="mainnav-toggle" data-toggle="collapse" data-target=".mainnav-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-bars"></i>
+            </a>
+
+            <nav class="collapse mainnav-collapse" role="navigation">
+
+
+
+                <ul class="mainnav-menu">
+
+                    <li class="dropdown ">
+                        <a href="@Url.Action("DashBoard", "Admin")">Dashboard</a>
+
+                    </li>
+
+
+                    <li class="dropdown ">
+
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+                            Add
+                            <i class="mainnav-caret"></i>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+
+
+
+                            <li>
+                                <a href="@Url.Action("CreateCategory", "Admin")">
+                                    <i class="fa fa-bars"></i> Add Categories
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="@Url.Action("SubCategory", "Admin")">
+                                    <i class="fa fa-bars"></i> Add SubCategories
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="@Url.Action("CreateWebsites", "Admin")">
+                                    <i class="fa fa-bars"></i> Add Websites Categories
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="@Url.Action("CreateCupons", "Admin")">
+                                    <i class="fa fa-ticket"></i> Add Coupons
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("ImageUpload", "Admin")">
+                                    <i class="fa fa-picture-o"></i> Upload Images
+                                </a>
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="@Url.Action("CouponsList", "Admin")">Coupons List</a>
+
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="@Url.Action("MobileUsers", "Admin")">Mobile Users</a>
+
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="@Url.Action("RegUsers", "Admin")">Registered Users</a>
+
+                    </li>
+                    <li class="dropdown">
+                        <a href="@Url.Action("slider", "Admin")">Slider</a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div> <!-- /.container -->
+
+    </div>
+    <!-- /.mainnav -->
+    <div class="content">
+        <div class="container">
+            <section class="demo-section">
+
+
+
+                <ul id="myTab1" class="nav nav-tabs">
+                    <li class="active">
+                        <a href="" data-toggle="tab">Images List</a>
+                    </li>
+
+                    
+
+
+                </ul>
+
+                <div id="myTab1Content" class="tab-content">
+
+ 
+                        <div class="content">
+                            <div class="container">
+                                <section class="demo-section">
+
+
+
+                            
+
+                                    <div id="myTab1Content" class="tab-content">
+
+
+                                        <div class="tab-pane active" id="categories-list">
+                                            <div class="col-md-12">
+                                                <table class="table table-striped table-bordered thumbnail-table">
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <th style="width: 150px">Image</th>
+                                                            <th>Title</th>
+                                                            <th>Date</th>
+                                                            
+                                                            <th class="text-center">Actions</th>
+                                                        </tr>
+
+
+                                                        @foreach (var item in Model.listImageDetail) { 
+                                                        <tr>
+                                                            <td>
+                                                                <div class="thumbnail">
+                                                                    <div class="thumbnail-view">
+                                                                        <a class="thumbnail-view-hover ui-lightbox" href="@item.Url">
+                                                                        </a>
+
+                                                                        <img src="@item.Url" width="125" alt="Gallery Image">
+                                                                    </div>
+                                                                </div> <!-- /.thumbnail -->
+                                                            </td>
+                                                            <td class="valign-middle">
+                                                                <a title="">@item.Name</a>
+
+                                                            </td>
+                                                            <td class="valign-middle">@item.CreatedOn.ToString("mmm dd yyyy HH:mm")</td>
+                                                     
+                                                            <td class="text-center valign-middle removeImage">
+                                                         
+                                                                <a href="@Url.Action("DeleteImageList","Admin", new {id=item.id})"><i class="fa fa-trash"></i> Delete</a>
+                                                            </td>
+                                                        </tr>
+                                                        }
+ 
+
+
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="tab-pane" id="home">
+
+                                            <div class="col-md-6">
+
+
+
+                                                <form id="demo-validation" action="./components-validation.html" data-validate="parsley" class="form parsley-form">
+
+                                                    <div class="form-group">
+                                                        <label for="name">Image Title</label>
+                                                        <input type="text" id="name" name="name" class="form-control" data-required="true">
+                                                    </div> <!-- /.form-group -->
+
+
+                                                    <div class="form-group">
+                                                        <input type="file" class="form-control img_upload">
+                                                    </div> <!-- /.form-group -->
+
+
+
+
+
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-danger">Upload</button>
+                                                    </div> <!-- /.form-group -->
+
+                                                </form>
+
+                                            </div>
+                                        </div> <!-- /.tab-pane -->
+
+
+
+
+
+                                    </div> <!-- /.tab-content -->
+
+                                </section> <!-- /.demo-section -->
+
+                            </div>
+
+
+
+                        </div>
+
+
+               
+
+
+                </div> <!-- /.tab-content -->
+
+            </section> <!-- /.demo-section -->
+
+        </div>
+
+
+
+    </div> 
+    <!-- .content -->
+
+</div> 
+<!-- /#wrapper -->

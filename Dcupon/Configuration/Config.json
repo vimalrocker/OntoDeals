@@ -1,0 +1,34 @@
+﻿{
+      "DBconnection": [
+        { "Production":"Server=198.71.225.54:3306;Database=OntoDeals;Uid=sa;Pwd=yMf3w6!5;providerName=MySql.Data.MySqlClient;providerName=System.Data.SqlClient"},
+        {  "Test": "metadata=res://*/DAL.OntoDeals.csdl|res://*/DAL.OntoDeals.ssdl|res://*/DAL.OntoDeals.msl;provider=MySql.Data.MySqlClient;provider connectionstring=server=198.71.225.54:3306;user id=sa;password=yMf3w6!5;persistsecurityinfo=True;database=OntoDeals;providerName=System.Data.EntityClient" }
+
+ 
+    ],
+      "IMAPDetails": [
+        {
+            "FromAddress": "test@gmail.com",
+            "Password": "",
+            "Subject": "Notification",
+            "Host": "smtp.gmail.com",
+            "Port": "25"
+        }
+    ],
+
+         "NOReply": [
+        {
+            "FromAddress": "noreply@ontodeals.com",
+            "Password": "abcde",
+            "Subject": "OntoDeals Password Assistance",
+            "Host": "smtpout.secureserver.net",
+            "Port": "25",
+            "body": "<p>We received a request to reset the password associated with this e-mail address. If you made this request, please follow the instructions below.</p> <p>Click on the link below to reset your password using our secure server:</p><br>http://localhost:53539/PasswordReset?email='1234'&token='@abcde'<br>",
+            "Adminbody":"<p>We received a request to reset the password associated with this e-mail address. If you made this request, please follow the instructions below.</p> <p>Click on the link below to reset your password using our secure server:</p><br>http://localhost:53539/AdminPasswordReset?email='1234'&token='@abcde'<br>"
+      
+                     
+                  
+        }
+    ]
+
+
+}
