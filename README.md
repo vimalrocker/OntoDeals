@@ -7,7 +7,7 @@ An ASP.NET MVC Web application to find the best price & deals for online Shoppin
 
  • Developed a front end user interface using ASP.NET MVC | Bootstrap | jQuery | ajax  
  • Implemented backend using C# | MYSQL | Entity Framework | Json  
- • Hosting of web app using Godaddy.    
+ • Hosting  web app using Godaddy.    
   	
 
  
